@@ -1,0 +1,34 @@
+name: release-tag
+on:
+  push:
+    branches: [main]
+    paths: ['release-manifests/*.json']
+permissions:
+  contents: write
+jobs:
+  tag:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Tag verified release manifests
+        run: |
+          python3 - <<'PY'
+          import json, os, re, subprocess
+          from pathlib import Path
+          for file in sorted(Path('release-manifests').glob('*.json')):
+              release = json.loads(file.read_text())
+              version = release['version']
+              if not re.fullmatch(r'\d+\.\d+\.\d+', version) or file.stem != version:
+                  raise SystemExit('Invalid release version')
+              if not re.fullmatch(r'[0-9a-f]{40}', release['source_revision']):
+                  raise SystemExit('Invalid source revision')
+              if not release['artifacts'] or any(not re.fullmatch(r'[0-9a-f]{64}', item['sha256']) for item in release['artifacts']):
+                  raise SystemExit('Invalid artifact digests')
+              tag = 'v' + version
+              if subprocess.check_output(['git', 'tag', '--list', tag], text=True).strip():
+                  continue
+              subprocess.run(['git', 'tag', tag, os.environ['GITHUB_SHA']], check=True)
+              subprocess.run(['git', 'push', 'origin', 'refs/tags/' + tag], check=True)
+          PY

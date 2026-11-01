@@ -1,0 +1,26 @@
+{
+  "version": "1.2.8",
+  "source_revision": "e17a9ee6c4fbd24cb203f12781801ee72e22691c",
+  "artifacts": [
+    {
+      "name": "artika-browser-1.2.8-portable.exe",
+      "sha256": "61652d68cef14ed8babfec97d2e95df387ec9921763d9d35defc013b53c4b1c6",
+      "size": 115749894
+    },
+    {
+      "name": "artika-browser-1.2.8-setup.exe",
+      "sha256": "7a2d024e73778c3e46a0ccba35e196943b5532c593cbf5d7cb7f7b72a3d153ce",
+      "size": 116067496
+    },
+    {
+      "name": "artika-browser-1.2.8-win.zip",
+      "sha256": "0f4f62e31368aecb90310412220ea89f137acb9b2c9cd88592c523a4b49373d2",
+      "size": 163705162
+    },
+    {
+      "name": "artika-browser-1.2.8.AppImage",
+      "sha256": "2b52a5b55c410b92218f061c6940499fc5773626eac62d747305751cec7e5527",
+      "size": 141734667
+    }
+  ]
+}
