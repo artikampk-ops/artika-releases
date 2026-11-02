@@ -1,0 +1,28 @@
+{
+  "version": "1.3.1",
+  "source_revision": "f6daa129ed1ebb439207849f89e8c29ca02b6cf5",
+  "source_tree": "6c6ddd6d0e425368e67ef2d97bb0f71257e00b32",
+  "server_revision": "427ad5a8d84b06b7955cc56bc88b79c154330c85",
+  "artifacts": [
+    {
+      "name": "artika-browser-1.3.1.AppImage",
+      "size": 141747172,
+      "sha256": "9bc367b397e4472104526a85781d0c09d15977dec8a3d0665b64c2077ea98455"
+    },
+    {
+      "name": "artika-browser-1.3.1-portable.exe",
+      "size": 115759362,
+      "sha256": "daa1c22e87c2ed55cc9f12f3bf794f6003f6bf1c9caaaa41f871ca61f9ce8866"
+    },
+    {
+      "name": "artika-browser-1.3.1-setup.exe",
+      "size": 116077013,
+      "sha256": "dd22d30ede99d47a8f84b9be4960fbf7485f13d4c7305c6ee990f0f549445e0c"
+    },
+    {
+      "name": "artika-browser-1.3.1-win.zip",
+      "size": 163713620,
+      "sha256": "69c9e7d8ea2adf044081bb61d6dc67ee82f08b3a29a96277a3c516ba3f75ce5a"
+    }
+  ]
+}
